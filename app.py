@@ -4,6 +4,10 @@
 import streamlit as st
 from loader import load_documents_from_files
 from rag import create_rag_chain
+import os
+
+# Streamlit SecretsからAPIキー取得
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 # -------------------------------
 # 🔹 ページ基本設定
