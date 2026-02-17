@@ -6,12 +6,12 @@ from langchain_community.vectorstores import FAISS
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-
+import streamlit as st
 
 def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
 
-
+@st.cache_resource
 def create_rag_chain(documents):
 
     # --------------------------
